@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<div class="bs-example" data-example-id="hoverable-table">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @categories.each do |category| %>
+            <tr>
+              <td scope="row"><%= category.id %></td>
+              <td><%= link_to category.title, category %></td>
+              <td><%= category.description %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+<br>
+
+<%= link_to 'New category', new_category_path, class: "btn btn-primary" %>
