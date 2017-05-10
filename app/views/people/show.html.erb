@@ -16,21 +16,22 @@
     <%= link_to "Github",@person.github, target: "_blank", class: "btn btn-primary btn-sm" %>
   </p>
 
-<p>
-  <small>phone:</small>
-  <strong><%= @person.phone %></strong>
-</p>
-
-<p>
-  <div class="alert alert-info">
-  <small>skills:</small>
-  <span class="alert-link"><%= @person.skill %></span>
-  </div>
-</p>
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %> | 
-<%= link_to 'Destroy', @person, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<br><br>
-<small>ID: <%= @person.id %></small>
+  <p>
+    <small>phone:</small>
+    <strong><%= @person.phone %></strong>
+  </p>
+  
+  <p>
+    <div class="alert alert-info">
+    <small>skills:</small>
+    <span class="alert-link"><%= @person.skill %></span>
+    </div>
+  </p>
+  
+  <%= link_to 'Edit', edit_person_path(@person) %> |
+  <%= link_to 'Back', people_path %> | 
+  <%= link_to 'Destroy', @person, method: :delete, data: { confirm: 'Are you sure?' } %>
+  
+  <br><br>
+  <small>ID: <%= @person.id %></small>
+</div>
