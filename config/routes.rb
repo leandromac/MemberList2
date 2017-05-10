@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   resources :people
   resources :categories
   
-  root "categories#index"
+  root "people#index"
   
 end
