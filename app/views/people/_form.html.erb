@@ -39,10 +39,10 @@
         <%= f.url_field :github, class: "form-control", placeholder: "Github" %>
       </div>
       <div class="form-group">
-        <%= f.text_field :skill, class: "form-control", placeholder: "Skill" %>
+        <%= f.text_field :skill, class: "form-control", placeholder: "Skills (example: html, css, javascript...)" %>
       </div>
       <div class="form-group">
-        <%= f.text_area :about, class: "form-control", placeholder: "About me" %>
+        <%= f.text_area :about, class: "form-control", placeholder: "About me..." %>
       </div>
       <div class="form-group">
           <%= collection_select(:person, :category_id, Category.all, :id, :title) %>
