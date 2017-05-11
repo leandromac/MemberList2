@@ -8,8 +8,7 @@
 <%= link_to 'Show', @category %>
 
   <% else %>
-  <h1 class="text-center text-muted">You are not logged in... :'(</h1>
-  <p class="text-center">
-    <%= link_to "Clique here to Login", new_user_session_path, :class => 'btn btn-primary btn-lg'  %>
-  </p>
+  <script type="text/javascript">
+    window.location.href="/users/sign_in"
+  </script>
 <% end %>
