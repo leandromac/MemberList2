@@ -12,28 +12,33 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 text-left">
+     <small>
       <p><%= current_page?(people_path) ? '' : '' %><%= link_to 'Members'.html_safe, people_path %> <span class="text-muted">|</span> 
-      <%= current_page?(categories_path) ? '' : '' %><%= link_to 'Categories'.html_safe, categories_path %></p></div>
+      <%= current_page?(categories_path) ? '' : '' %><%= link_to 'Categories'.html_safe, categories_path %></p>
+      </small>
+    </div>
     <div class="col-md-4 text-center">
       <img src="https://pbs.twimg.com/profile_images/531517720362090497/eL0Fz7Sr.png" width="90" height="auto"><br>
     <strong class="text-info">CloudMembers</strong>
     </div>
     <div class="col-md-4 text-right">
+      <small>
       <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+          Welcome <strong><%= link_to current_user.email, edit_user_registration_path %></strong> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+          
         <% else %>
           <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
           <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
       <% end %>
+      </small>
     </div>
   </div>
     <div class="navbar-header">
       
     </div>
 
-  <p class="alert"><%= alert %></p>
+  <p class="alert text-center text-warning"><small><%= alert %></small></p>
   
   <%= yield %>
   
