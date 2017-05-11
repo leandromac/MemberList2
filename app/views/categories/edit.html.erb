@@ -1,6 +1,15 @@
+<% if user_signed_in? %>
+
 <h1 class="text-center lead">Editing Category</h1>
 
 <%= render 'form' %>
 
 <%= link_to '< Back', categories_path %> |
 <%= link_to 'Show', @category %>
+
+  <% else %>
+  <h1 class="text-center text-muted">You are not logged in... :'(</h1>
+  <p class="text-center">
+    <%= link_to "Clique here to Login", new_user_session_path, :class => 'btn btn-primary btn-lg'  %>
+  </p>
+<% end %>

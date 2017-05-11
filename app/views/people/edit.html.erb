@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <h1 class="text-center lead">Editing Person</h1>
 
 <%= render 'form' %>
@@ -5,3 +6,9 @@
 <%= link_to '< Back', people_path %> |
 <%= link_to 'Show', @person %>
 
+<% else %>
+  <h1 class="text-center text-muted">You are not logged in... :'(</h1>
+  <p class="text-center">
+    <%= link_to "Clique here to Login", new_user_session_path, :class => 'btn btn-primary btn-lg'  %>
+  </p>
+<% end %>

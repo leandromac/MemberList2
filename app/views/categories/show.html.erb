@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <p id="notice"><%= notice %></p>
 
 <div class="jumbotron text-center">
@@ -10,3 +12,10 @@
 <%= link_to '< Back', categories_path %> |
 <%= link_to 'Edit', edit_category_path(@category) %>
 <%= link_to 'Delete category', @category, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger float-right" %>
+
+  <% else %>
+  <h1 class="text-center text-muted">You are not logged in... :'(</h1>
+  <p class="text-center">
+    <%= link_to "Clique here to Login", new_user_session_path, :class => 'btn btn-primary btn-lg'  %>
+  </p>
+<% end %>

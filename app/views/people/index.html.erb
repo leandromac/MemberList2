@@ -1,34 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-<h1 class="lead">Members</h1>
-
-      <div class="bs-example" data-example-id="hoverable-table">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Location</th>
-              <th>Category</th>
-              <th>Phone</th>
-            </tr>
-          </thead>
-          <tbody>
-          <% @people.each do |person| %>
-            <tr>
-              <th scope="row"><%= person.id %></th>
-              <td><%= link_to person.name, person %></td>
-              <td><%= person.location %></td>
-             <td><%= person.category.title %></td>
-              <td><%= person.phone %></td>
-            </tr>
-          <% end %>
-          </tbody>
-        </table>
-      </div>
-
-<br>
-
-<%= link_to 'New member', new_person_path, class: "btn btn-primary" %>
-
-<br><br>
+<% if user_signed_in? %>
+  <p id="notice"><%= notice %></p>
+  
+  <h1 class="lead">Members</h1>
+  
+        <div class="bs-example" data-example-id="hoverable-table">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Category</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% @people.each do |person| %>
+              <tr>
+                <th scope="row"><%= person.id %></th>
+                <td><%= link_to person.name, person %></td>
+                <td><%= person.location %></td>
+               <td><%= person.category.title %></td>
+                <td><%= person.phone %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+  
+  <br>
+  
+  <%= link_to 'New member', new_person_path, class: "btn btn-primary" %>
+  
+  <br><br>
+  
+  <% else %>
+  <h1 class="text-center text-muted">You are not logged in... :'(</h1>
+  <p class="text-center">
+    <%= link_to "Clique here to Login", new_user_session_path, :class => 'btn btn-primary btn-lg'  %>
+  </p>
+<% end %>

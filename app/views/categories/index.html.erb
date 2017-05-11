@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <p id="notice"><%= notice %></p>
 
 <h1 class="lead">Categories</h1>
@@ -25,3 +27,10 @@
 <br>
 
 <%= link_to 'New category', new_category_path, class: "btn btn-primary" %>
+
+  <% else %>
+  <h1 class="text-center text-muted">You are not logged in... :'(</h1>
+  <p class="text-center">
+    <%= link_to "Clique here to Login", new_user_session_path, :class => 'btn btn-primary btn-lg'  %>
+  </p>
+<% end %>
