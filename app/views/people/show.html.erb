@@ -2,11 +2,10 @@
 
 <div class="jumbotron text-center">
   <p><%= @person.category.title %><small class="text-muted"> | <%= @person.location %></small></p>
+      <hr>
  <!-- <img src="https://lh3.googleusercontent.com/DxNrfscPLqkWayDsoMHen7wF9wtmIEQpeHfQsnsE4qekwj6BlvnACEbyac48mgYNGg3LACTXfgm7kA=w1280-h756-rw-no" width="auto" height="200" > -->
-  <h1 class="text-uppercase text-muted"><%= @person.name %></h1>
-    <hr>
-
-  <p class="lead">"<%= @person.about %>"</p>
+  <h1 class=""><strong><%= @person.name %></strong></h1>
+  <p class="lead"><%= @person.about %></p>
   
   <p>
     <%= mail_to @person.email, @person.email, class: "btn btn-primary btn-sm" %>

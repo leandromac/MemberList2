@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MembersList</title>
+  <title>CloudMembers</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,16 +10,24 @@
 <body>
 
 <div class="container">
-
+  <div class="row">
+    <div class="col-md-4 text-left">
+      <p><%= current_page?(people_path) ? '' : '' %><%= link_to 'Members'.html_safe, people_path %> <span class="text-muted">|</span> 
+      <%= current_page?(categories_path) ? '' : '' %><%= link_to 'Categories'.html_safe, categories_path %></p></div>
+    <div class="col-md-4 text-center">
+      <img src="https://pbs.twimg.com/profile_images/531517720362090497/eL0Fz7Sr.png" width="90" height="auto"><br>
+    <strong class="text-info">CloudMembers</strong>
+    </div>
+    <div class="col-md-4 text-right">
+    </div>
+  </div>
     <div class="navbar-header">
-      <%= current_page?(people_path) ? '' : '' %><%= link_to 'Members'.html_safe, people_path %> | 
-      <%= current_page?(categories_path) ? '' : '' %><%= link_to 'Categories'.html_safe, categories_path %>
+      
     </div>
 
   <br>
   <p class="text-center">
-    <img src="http://utu.agency/wp-content/uploads/2016/07/logo.svg" width="90" height="auto"><br>
-    <small>utu.agency</small>
+    
   </p>
   <%= yield %>
   
