@@ -13,19 +13,19 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
       <div class="form-group">
-        <%= f.label :password %><br><small>(leave blank if you don't want to change it)</small>
+        <%= f.label "Change password" %> <small>(Optional)</small>
+        <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "Current password" %>
+      </div>
+      <div class="form-group">
+        <small><%= @minimum_password_length %> characters minimum</small>
         <%= f.password_field :password, autocomplete: "off",  class: "form-control", placeholder: "New password" %>
         <% if @minimum_password_length %>
-        <small><%= @minimum_password_length %> characters minimum</small>
         <% end %>
       </div>
       <div class="form-group">
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm new password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Repeat password" %>
       </div>
-      <div class="form-group">
-        <small>(we need your current password to confirm your changes)</small>
-        <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "Current password" %>
-      </div>
+
         <div class="actions">
             <%= f.submit "Update", class: "btn btn-success" %>
         </div>

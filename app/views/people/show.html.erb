@@ -28,12 +28,12 @@
     <span class="alert-link"><%= @person.skill %></span>
     </div>
   </p>
-    <small>ID: <%= @person.id %></small>
+    <small class="text-muted">Member ID: <%= @person.id %></small>
 
   </div>
   <%= link_to '< Back', people_path %> |
   <%= link_to 'Edit', edit_person_path(@person) %>
-  <%= link_to 'Delete member', @person, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger float-right" %>
+  <%= link_to 'Delete member', @person, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm float-right" %>
   
   <br><br>
 <% else %>

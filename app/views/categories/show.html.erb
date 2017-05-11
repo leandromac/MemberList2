@@ -11,7 +11,7 @@
 </div>
 <%= link_to '< Back', categories_path %> |
 <%= link_to 'Edit', edit_category_path(@category) %>
-<%= link_to 'Delete category', @category, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger float-right" %>
+<%= link_to 'Delete category', @category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm float-right" %>
 
   <% else %>
   <h1 class="text-center text-muted">You are not logged in... :'(</h1>
